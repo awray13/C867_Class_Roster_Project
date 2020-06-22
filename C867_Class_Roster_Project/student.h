@@ -25,7 +25,7 @@ public:
 	const static int numberOfDaysToCompleteCourseSize = 3;
 	// Constructors
 	Student();
-	Student(string newId, string newFirstName, string newLastName, string newEmail, int newAge, int newNumDaysToComplete[], Degree newDegreeType);
+	Student(string newStudentId, string newFirstName, string newLastName, string newEmail, int newAge, int newNumberOfDaysToCompleteCourse[], Degree newDegreeType);
 
 	// Accessors
 	string getStudentId();
@@ -37,13 +37,13 @@ public:
 	virtual Degree getDegreeType() = 0; 
 
 	// Mutators
-	void setStudentId(string newId);
+	void setStudentId(string newStudentId);
 	void setFirstName(string newFirstName);
 	void setLastName(string newLastName);
 	void setEmailAddress(string newEmail);
 	void setAge(int newAge);
-	void setNumberOfDaysToCompleteCourse(int newNumDaysToComplete[]);
-	virtual void setDegreeType(Degree d) = 0;
+	void setNumberOfDaysToCompleteCourse(int newNumberOfDaysToCompleteCourse[]);
+	virtual void setDegreeType(Degree degree) = 0;
 	virtual void print() = 0;
 
 	// Destructor

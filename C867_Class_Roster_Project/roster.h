@@ -4,10 +4,11 @@
 #include <list>
 #include <string>
 #include "student.h"
+#include "degree.h"
 
 using namespace std;
 
-const int numOfStudents = 5;
+const int numberOfStudents = 5;
 
 const string studentData[] =
 {
@@ -18,20 +19,27 @@ const string studentData[] =
 	"A5,Ashton,Wray,awray11@my.wgu.edu,33,40,30,32,SOFTWARE"
 };
 
-class Roster {
-public:
-	int lastIndex;
-	int capacity;
-	Student** classRosterArray;
-	Roster();
-	Roster(int capacity);
-	void add(string datarow);
-	void printAll();
-	void remove(string studentId);
-	void printAverageDaysInCourse(string studentId);
-	void printInvalidEmails();
-	void printDegree(Degree degreeProgram);
-	~Roster();
+class Roster 
+{
+	public:
+		int lastIndex;
+		int rosterSize;
+
+		Roster();
+		Roster(int rosterSize);
+
+		void add(string studentId, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree degree);
+		void printAll();
+		void remove(string studentId);
+		void printAverageDaysInCourse(string studentId);
+		void printInvalidEmails();
+		void printByDegreeProgram(Degree degreeProgram);
+
+		Student** classRosterArray;
+
+		
+
+		~Roster();
 };
 
 #endif

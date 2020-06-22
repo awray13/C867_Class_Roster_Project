@@ -9,18 +9,18 @@ using namespace std;
 // MAIN: Function responsible for running program
 int main()
 {
+	// My info
+	cout << "SCRIPTING AND PROGRAMMING - APPLICATIONS - C867" << endl;
+	cout << "C++" << endl;
+	cout << "#001252298" << endl;
+	cout << "Ashton Wray" << endl;
+	cout << "================================================" << endl << endl;
 
-	cout << "******************** COURSE TITLE ********************" << endl << endl;
-	cout << "     SCRIPTING AND PROGRAMMING - APPLICATIONS - C867" << endl << endl;
-	cout << "**************** PROGRAMMING LANGUAGE USED ****************" << endl << endl;
-	cout << "                         C++ " << endl << endl;
-	cout << "**************** WGU STUDENT ID AND NAME *****************" << endl << endl;
-	cout << "              #001252298 - ASHTON WRAY" << endl << endl;
+	Roster* classRoster = new Roster(numberOfStudents);
 
-	Roster* classRoster = new Roster(numOfStudents);
-	for (int i = 0; i < numOfStudents; ++i) 
+	for (int i = 0; i < numberOfStudents; i++) 
 	{
-		classRoster->add(studentData[i]);
+		classRoster->add(studentData[i], ",");
 	}
 
 
@@ -33,7 +33,7 @@ int main()
 	cout << endl;
 
 	cout << "Average days per class for each student" << endl;
-	for (int i = 0; i < numOfStudents; ++i) 
+	for (int i = 0; i < numberOfStudents; ++i) 
 	{
 		classRoster->printAverageDaysInCourse(classRoster->classRosterArray[i]->getStudentId());
 	}

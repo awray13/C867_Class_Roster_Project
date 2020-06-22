@@ -13,15 +13,15 @@ Student::Student() {
 		this->lastName = "";
 		this->emailAddress = "";
 		this->age = 0;
-		// create a NEW array dynamically - MUST because it's VIRTUAL
-		this->numberOfDaysToCompleteCourse = new int[numberOfDaysToCompleteCourseSize]; // create new array and use destrctor to dispose of it
+		this->numberOfDaysToCompleteCourse = new int[numberOfDaysToCompleteCourseSize]; // create new array and use destructor to dispose of it
 		for (int i = 0; i < numberOfDaysToCompleteCourseSize; i++) this->numberOfDaysToCompleteCourse[i] = 0;
 
 	}
 }
 
-Student::Student(string newId, string newFirstName, string newLastName, string newEmail, int newAge, int newNumDaysToComplete[], Degree newDegreeType) {
-	this->studentId = newId;
+Student::Student(string newStudentId, string newFirstName, string newLastName, string newEmail, int newAge, int newNumberOfDaysToComplete[], Degree newDegreeType) 
+{
+	this->studentId = newStudentId;
 	this->firstName = newFirstName;
 	this->lastName = newLastName;
 	this->emailAddress = newEmail;
@@ -31,7 +31,7 @@ Student::Student(string newId, string newFirstName, string newLastName, string n
 	this->numberOfDaysToCompleteCourse = new int[numberOfDaysToCompleteCourseSize];
 
 	// Loop through Array
-	for (int i = 0; i < 3; i++) this->numberOfDaysToCompleteCourse[i] = newNumDaysToComplete[i];
+	for (int i = 0; i < 3; i++) this->numberOfDaysToCompleteCourse[i] = newNumberOfDaysToComplete[i];
 }
 
 // Accessors
@@ -66,9 +66,9 @@ int* Student::getNumberOfDaysToCompleteCourse()
 }
 
 // Mutators
-void Student::setStudentId(string newId)
+void Student::setStudentId(string newStudentId)
 {
-	this->studentId = newId;
+	this->studentId = newStudentId;
 }
 void Student::setFirstName(string newFirstName)
 {
